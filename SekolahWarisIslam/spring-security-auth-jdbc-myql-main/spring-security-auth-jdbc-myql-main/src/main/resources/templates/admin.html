@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+    <h2>Daftar Pendaftaran</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Nama</th>
+                <th>No Telepon</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pendaftaran : ${daftarPendaftaran}">
+                <td th:text="${pendaftaran.id}"></td>
+                <td th:text="${pendaftaran.email}"></td>
+                <td th:text="${pendaftaran.nama}"></td>
+                <td th:text="${pendaftaran.noTelp}"></td>
+                <td>
+                    <a th:href="@{'/edit/' + ${pendaftaran.id}}">Edit</a> |
+                    <a th:href="@{'/delete/' + ${pendaftaran.id}}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
+    
+</body>
+</html>

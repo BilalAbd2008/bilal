@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pendaftaran</title>
+    <link rel="stylesheet" th:href="@{/css/formdaftar.css}">
+    <link rel="stylesheet" th:href="@{/css/popup.css}">
+</head>
+<body>
+    <section class="container">
+        <header>Edit Pendaftaran</header>
+        <form id="editForm" th:action="@{'/edit/' + ${pendaftaran.id}+'/update'}" method="post" class="form" th:object="${pendaftaran}">
+            <input type="hidden" th:field="*{id}">
+            <div class="input-box">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" th:field="*{email}"><br>
+            </div>
+            <div class="input-box">
+                <label for="nama">Nama:</label><br>
+                <input type="text" id="nama" name="nama" th:field="*{nama}"><br>
+            </div>
+            <div class="input-box">
+                <label for="noTelp">Nomor Telepon:</label><br>
+                <input type="text" id="noTelp" name="noTelp" th:field="*{noTelp}"><br><br>
+            </div>
+            <div class="tombol">
+                <button type="submit" value="Update" class="no-underline btn">Submit</button>
+                <button><a th:href="@{/}" class="no-underline">Kembali</a></button>
+            </div>
+        </form>
+    </section>
+
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popupMessage">
+        <h2>Data berhasil diubah.</h2>
+        <button class="btn" onclick="closePopup()">Tutup</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#editForm').on('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form data
+            var formData = $(this).serialize();
+
+            // Send form data using AJAX
+            $.ajax({
+                type: 'POST',
+                url: this.action,
+                data: formData,
+                success: function(response) {
+                    // Show the popup
+                    document.getElementById('popupOverlay').classList.add('active');
+                    document.getElementById('popupMessage').classList.add('active');
+                },
+                error: function(error) {
+                    alert('Error submitting data');
+                }
+            });
+        });
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+            document.getElementById('popupMessage').classList.remove('active');
+
+            // Optionally, you can redirect or reset the form here
+            window.location.href = '/'; // Redirect to another page
+        }
+
+        // Navigation Bar Toggle Script
+        $('#menu-btn').click(function () {
+            $('nav .navigation ul').addClass('active')
+        });
+        $('#menu-close').click(function () {
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+
+	
+</body>
+</html>

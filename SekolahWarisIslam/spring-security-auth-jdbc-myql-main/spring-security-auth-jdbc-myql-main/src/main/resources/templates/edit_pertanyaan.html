@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pertanyaan</title>
+    <link rel="stylesheet" th:href="@{/css/formdaftar.css}">
+</head>
+<body>
+    <h2>Edit Pertanyaan</h2>
+    <form th:action="@{'/edit/' + ${Pertanyaan.id}+'/update'}" method="post" th:object="${pertanyaan}">
+        <input type="hidden" th:field="*{id}">
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" th:field="*{nama}"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" th:field="*{email}"><br>
+        <label for="judul">Judul:</label><br>
+        <input type="text" id="judul" name="judul" th:field="*{judul}"><br><br>
+        <label for="isi">Isi Pertanyaan:</label><br>
+        <input type="text" id="isi" name="isi" th:field="*{isi}"><br><br>
+        <input type="submit" value="Update">
+    </form>
+
+	<a th:href="@{/}">BACK</a>
+</body>
+</html>

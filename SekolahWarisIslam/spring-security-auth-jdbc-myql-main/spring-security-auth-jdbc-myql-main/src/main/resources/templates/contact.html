@@ -1,0 +1,217 @@
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sekolah Waris Islam</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <link rel="stylesheet" th:href="@{/css/popup.css}">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+        
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav>
+            <a th:href="@{/indexx}">
+                <img th:src="@{/assets/images2/terbaru_logo_sekolah_waris.png}" alt="Logo Sekolah Waris Islam">
+            </a>
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fas fa-times"></i>
+                    <li><a th:href="@{/indexx}">Home</a></li>
+                    <li><a th:href="@{/about}">Tentang</a></li>
+                    <li><a th:href="@{/blog}">Blog</a></li>
+                    <li><a class="active" th:href="@{/contact}">Kontak</a></li>
+                    <li><a th:href="@{/daftar}">Daftar</a></li>
+                </ul>
+                <img id="menu-btn" th:src="@{/assets/images/menu.png}" alt="">
+            </div>
+        </nav>
+
+        <!-- Home -->
+        <section id="about-home">
+            <h2>Kontak Kami </h2>
+        </section>
+
+        <section id="contact">
+            <div class="getin">
+                <h2>Kenal lebih dekat</h2>
+                <p> Ada pertanyaan? Silakan isikan pertanyaan Anda di kolom yang sudah disediakan! </p>
+                <div class="getin-details">
+
+                    <h3>Lokasi Sekolah Waris Islam</h3>
+                    <div>
+                        <a th:href="@{'https://wa.me/6281291712761'}" target="_blank">
+                            <i class="far fa-home get"></i>
+                        </a>
+                        <p> Perumahan Bumi Dirgantara Permai ( Cluster Bali 2 )
+                            Jl. Suryadarma I Blok BI No 17 RT 001 RW 011 Jatisari, Jatiasih, Kota Bekasi, Jawa Barat 17426
+                        </p>
+                    </div>
+
+                    <h3>Telepon / WhatsApp</h3>
+                    <div>
+                        <a th:href="@{'https://wa.me/6281291712761'}" target="_blank">
+                            <i class="fas fa-phone-alt get"></i>
+                        </a>
+                        <p> +6281291712761 <br></p>
+                    </div>
+
+                    <h3>Ikuti Akun Sosial Media Kami!</h3>
+                    <div class="pro-links">
+                        <a th:href="@{'https://www.instagram.com/sekolahwarisislam/'}" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <h4> Ajukan Pertanyaan Anda Di sini!</h4>
+                <p> Kami akan menjawab pertanyaan Anda melalui e-mail yang diberikan. </p>
+            
+            
+                <form id="questionForm" th:action="@{/pertanyaan/save}" method="post" th:object="${pertanyaan}">
+                    <div class="form-row">
+                        <input type="text" name="nama" th:field="*{nama}"  placeholder="Nama Anda" required>
+                        <input type="email" name="email" th:field="*{email}" placeholder="Email" required>
+                    </div>
+                    <div class="form-col">
+                        <input type="text" name="judul" th:field="*{judul}" placeholder="Judul Pertanyaan" required>
+                    </div>
+                    <div class="form-col">
+                        <textarea name="isi" cols="30" rows="8"  th:field="*{isi}" placeholder="Bagaimana kami bisa membantu Anda?" required></textarea>
+                    </div>
+                    <div class="form-col tombol">
+                        <button type="submit" value="submit">Kirim Pertanyaan</button>
+                    </div>
+                </form>
+                
+                
+                
+                
+            </div>
+            
+        </section>
+
+        <section id="judulgmaps">
+            <div class="gmaps">
+                <h3>Temukan Lokasi Sekolah Waris Islam melalui Google Maps!</h3>
+            </div>
+        </section>
+
+        <section id="map">
+            <iframe th:src="@{'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.378971622425!2d106.94661947475167!3d-6.344944393644844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjAnNDEuOCJTIDEwNsKwNTYnNTcuMSJF!5e0!3m2!1sen!2sid!4v1715911547313!5m2!1sen!2sid'}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-col0">
+                <h3>Navigasi Web</h3>
+                <li><a th:href="@{/indexx}" class="aktif"> Home </a></li>
+                <li><a th:href="@{/about}" class="no-underline">Tentang</a></li>
+                <li><a th:href="@{/blog}" class="no-underline">Blog</a></li>
+                <li><a th:href="@{/contact}" class="no-underline">Kontak</a></li>
+                <li><a th:href="@{/daftar}" class="no-underline">Daftar</a></li>
+            </div>
+    
+            <div class="footer-col0">
+                <h3>Kontak Kami</h3>
+    
+                <div class="contact-info">
+                    <a href="https://wa.me/6281291712761" class="no-underline" target="_blank">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+62 812 9171 2761 (WhatsApp)</span><br>
+                    </a>
+                </div>
+    
+                <div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sekolahwarisislam@gmail.com" class="no-underline" target="_blank">
+                        <br><i class="fas fa-envelope get"></i>
+                        <span>sekolahwarisislam@gmail.com </span>
+                    </a>
+                </div>
+    
+            </div>
+    
+            <div class="footer-col0">
+                <h3>Sosial Media Sekolah Waris Islam</h3>
+                <div class="contact-info">
+                    <a href="https://www.instagram.com/sekolahwarisislam" class="no-underline" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="lokasi">
+                <p>Perumahan Bumi Dirgantara Permai ( Cluster Bali 2 )
+                    Jl. Suryadarma I Blok BI No 17 RT 001 RW 011 Jatisari, Jatiasih, Kota Bekasi, Jawa Barat 17426</p>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright @2024 All rights reserved | Sekolah Waris Islam</p>
+            </div>
+        </footer>
+        <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popupMessage">
+        <h2>Terimakasih Sudah Bertanya</h2>
+        <button class="btn" onclick="closePopup()">Tutup</button>
+    </div>
+    
+        <script th:src="@{/js/form.js}"></script>
+        <script>
+            $('#menu-btn').click(function () {
+                $('nav .navigation ul').addClass('active')
+            });
+            $('#menu-close').click(function () {
+                $('nav .navigation ul').removeClass('active')
+            });
+
+            document.getElementById('questionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form data
+            var formData = $(this).serialize();
+
+            // Send form data using AJAX
+            $.ajax({
+                type: 'POST',
+                url: this.action,
+                data: formData,
+                success: function(response) {
+                    // Show the popup
+                    document.getElementById('popupOverlay').classList.add('active');
+                    document.getElementById('popupMessage').classList.add('active');
+                },
+                error: function(error) {
+                    alert('Error submitting data');
+                }
+            });
+        });
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+            document.getElementById('popupMessage').classList.remove('active');
+
+            // Optionally, you can redirect or reset the form here
+            window.location.href = '/contact'; // Reset the form
+            // window.location.href = '/your-redirect-url'; // Redirect to another page
+        }
+
+            // Navigation Bar
+        </script>
+
+    </body>
+
+    </html>

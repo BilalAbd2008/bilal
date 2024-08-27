@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sekolah Waris Islam</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav>
+            <img th:src="@{/assets/images2/terbaru_logo_sekolah_waris.png}" alt="Logo Sekolah Waris Islam">
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fas fa-times"></i>
+                    <li><a th:href="@{/indexx}">Home</a></li>
+                    <li><a th:href="@{/about}">Tentang</a></li>
+                    <li><a th:href="@{/blog}" class="active">Blog</a></li>
+                    <li><a th:href="@{/contact}">Kontak</a></li>
+                    <li><a th:href="@{/daftar}">Daftar Sekarang</a></li>
+                </ul>
+                <img id="menu-btn" th:src="@{/assets/images/menu.png}" alt="Menu">
+            </div>
+        </nav>
+
+        <!-- Home -->
+        <section id="blog-container">
+            <div class="blogs blogpost">
+                <div class="post">
+                    <img th:src="@{/assets/images2/zakat.jpg}" alt="Gambar Zakat">
+                    <h3>Mengenal Zakat : Kewajiban dan Manfaatnya</h3>
+                    <p>Zakat adalah salah satu dari lima rukun Islam yang wajib dipenuhi oleh setiap Muslim yang mampu. Secara harfiah, zakat berarti "membersihkan" atau "menyucikan". Dalam konteks Islam, zakat merupakan kewajiban untuk mengeluarkan sebagian dari harta yang dimiliki dan memberikannya kepada yang berhak menerimanya. Ketentuan zakat ini telah diatur dalam Al-Quran dan Hadis, dengan tujuan untuk mendistribusikan kekayaan secara lebih merata dan membantu mereka yang kurang beruntung.<br><br>
+
+                        Pemberian zakat memiliki berbagai manfaat, baik bagi penerima maupun pemberi. Bagi penerima, zakat bisa menjadi bantuan yang sangat berarti dalam memenuhi kebutuhan dasar mereka seperti makanan, pakaian, dan tempat tinggal. Sementara bagi pemberi, zakat membantu membersihkan harta dari unsur-unsur yang tidak halal, serta mengembangkan rasa empati dan solidaritas sosial. Zakat juga berfungsi sebagai sarana untuk mengurangi kesenjangan ekonomi dan menciptakan keadilan sosial dalam masyarakat.
+                    <br><br>
+
+                    Ada beberapa jenis zakat yang dikenal dalam Islam, di antaranya zakat fitrah dan zakat mal. Zakat fitrah wajib dikeluarkan oleh setiap Muslim menjelang Idul Fitri sebagai penutup ibadah puasa Ramadhan. Sedangkan zakat mal adalah zakat yang dikeluarkan dari harta kekayaan seseorang yang telah mencapai nisab (batas minimum harta yang wajib dizakati) dan telah dimiliki selama satu tahun penuh. Contoh harta yang dikenakan zakat mal meliputi emas, perak, uang, hasil pertanian, dan ternak.<br><br>
+
+                    Dengan aturan-aturan yang komprehensif ini, Islam berusaha menciptakan keseimbangan antara hak individu dan tanggung jawab sosial. Pembagian harta bukan hanya soal memenuhi kewajiban agama, tetapi juga tentang membangun masyarakat yang adil dan sejahtera. Melalui penerapan prinsip-prinsip ini, diharapkan setiap Muslim dapat menjalankan kehidupannya dengan penuh keberkahan, serta berkontribusi pada kesejahteraan bersama.     
+                    </p>
+                    <div class="btn">
+                        <a class="blue" th:href="@{/blog}">Kembali</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-col0">
+                <h3>Navigasi Web</h3>
+                <li><a th:href="@{/indexx}" class="aktif"> Home </a></li>
+                <li><a th:href="@{/about}" class="no-underline">Tentang</a></li>
+                <li><a th:href="@{/blog}" class="no-underline">Blog</a></li>
+                <li><a th:href="@{/contact}" class="no-underline">Kontak</a></li>
+                <li><a th:href="@{/daftar}" class="no-underline">Daftar</a></li>
+            </div>
+    
+            <div class="footer-col0">
+                <h3>Kontak Kami</h3>
+    
+                <div class="contact-info">
+                    <a href="https://wa.me/6281291712761" class="no-underline" target="_blank">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+62 812 9171 2761 (WhatsApp)</span><br>
+                    </a>
+                </div>
+    
+                <div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sekolahwarisislam@gmail.com" class="no-underline" target="_blank">
+                        <br><i class="fas fa-envelope get"></i>
+                        <span>sekolahwarisislam@gmail.com </span>
+                    </a>
+                </div>
+    
+            </div>
+    
+            <div class="footer-col0">
+                <h3>Sosial Media Sekolah Waris Islam</h3>
+                <div class="contact-info">
+                    <a href="https://www.instagram.com/sekolahwarisislam" class="no-underline" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="lokasi">
+                <p>Perumahan Bumi Dirgantara Permai ( Cluster Bali 2 )
+                    Jl. Suryadarma I Blok BI No 17 RT 001 RW 011 Jatisari, Jatiasih, Kota Bekasi, Jawa Barat 17426</p>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright @2024 All rights reserved | Sekolah Waris Islam</p>
+            </div>
+        </footer>
+    
+        <script>
+            $('#menu-btn').click(function(){
+                $('nav .navigation ul').addClass('active')
+            });
+            $('#menu-close').click(function(){
+                $('nav .navigation ul').removeClass('active')
+            });
+
+            // Navigation Bar
+
+        </script>
+
+    </body>
+
+</html>

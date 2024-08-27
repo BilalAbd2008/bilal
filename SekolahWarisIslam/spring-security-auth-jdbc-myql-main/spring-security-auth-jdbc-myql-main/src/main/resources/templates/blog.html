@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekolah Waris Islam</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a th:href="@{/indexx}">
+            <img th:src="@{/assets/images2/terbaru_logo_sekolah_waris.png}" alt=" Logo Sekolah Waris Islam">
+        </a>
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a th:href="@{/indexx}">Home</a></li>
+                <li><a th:href="@{/about}">Tentang</a></li>
+                <li><a th:class="${active}" th:href="@{/blog}">Blog</a></li>
+                <li><a th:href="@{/contact}">Kontak</a></li>
+                <li><a th:href="@{/daftar}">Daftar</a></li>
+            </ul>
+            <img id="menu-btn" th:src="@{/assets/images2/menu.png}" alt="">
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="about-home">
+        <h2>Blog Seputar Islam </h2>
+    </section>
+
+    <section id="blog-container">
+        <div class="blogs">
+            <div class="post">
+                <img th:src="@{/assets/images2/memahamiilmuwaris.jpg}" alt="">
+                <h3>Memahami Ilmu Waris dalam Islam</h3>
+                <p>Ilmu waris dalam Islam sudah menjadi bagian dari kehidupan kita sehari-hari.  Oleh karena itu, penting untuk kita memiliki pengetahuan tentang Ilmu Waris dalam Islam </p>
+                <div class="btn">
+                    <a class="blue" th:href="@{/post}">Tampilkan Lebih Banyak...</a>
+                </div>
+            </div>
+            <div class="post">
+                <img th:src="@{/assets/images2/pembagianharta.jpeg}" alt="">
+                <h3>Pembagian Harta</h3>
+                <p> Sekolah Waris Islam adalah Tempat Belajar, Bertumbuuh tentang waris Islam dan dapat berkosultasi langsung kepada para ahli bagi siapa saja yang ingin menanyakan perihal waris Islam dan memberikan informasi mengenai apa saja yang dipelajari dan juga mengetahui betapa pentingnya ilmu waris Islam.</p>
+                <div class="btn">
+                    <a class="blue" th:href="@{/blogpembagianharta}">Tampilkan Lebih Banyak...</a>
+                </div>
+            </div>
+            <div class="post">
+                <img th:src="@{/assets/images2/zakat.jpg}" alt="">
+                <h3>Zakat</h3>
+                <p> Sekolah Waris Islam adalah Tempat Belajar, Bertumbuuh tentang waris Islam dan dapat berkosultasi langsung kepada para ahli bagi siapa saja yang ingin menanyakan perihal waris Islam dan memberikan informasi mengenai apa saja yang dipelajari dan juga mengetahui betapa pentingnya ilmu waris Islam.</p>
+                <div class="btn">
+                    <a class="blue" th:href="@{/blogzakat}">Tampilkan Lebih Banyak...</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="cate">
+            <h2>Belajar Apa Hari ini?</h2>
+            <hr>
+            <a th:href="@{/post}">Ilmu Waris</a>
+            <hr>
+            <a th:href="@{/blogpembagianharta}">Pembagian Harta</a>
+            <hr>
+            <a href="@{/blogzakat}">Zakat</a>
+            <hr>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col0">
+            <h3>Navigasi Web</h3>
+            <li><a th:href="@{/indexx}" class="aktif"> Home </a></li>
+            <li><a th:href="@{/about}" class="no-underline">Tentang</a></li>
+            <li><a th:href="@{/blog}" class="no-underline">Blog</a></li>
+            <li><a th:href="@{/contact}" class="no-underline">Kontak</a></li>
+            <li><a th:href="@{/daftar}" class="no-underline">Daftar</a></li>
+        </div>
+
+        <div class="footer-col0">
+            <h3>Kontak Kami</h3>
+
+            <div class="contact-info">
+                <a href="https://wa.me/6281291712761" class="no-underline" target="_blank">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+62 812 9171 2761 (WhatsApp)</span><br>
+                </a>
+            </div>
+
+            <div>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sekolahwarisislam@gmail.com" class="no-underline" target="_blank">
+                    <br><i class="fas fa-envelope get"></i>
+                    <span>sekolahwarisislam@gmail.com </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-col0">
+            <h3>Sosial Media Sekolah Waris Islam</h3>
+            <div class="contact-info">
+                <a href="https://www.instagram.com/sekolahwarisislam" class="no-underline" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="lokasi">
+            <p>Perumahan Bumi Dirgantara Permai ( Cluster Bali 2 )
+                Jl. Suryadarma I Blok BI No 17 RT 001 RW 011 Jatisari, Jatiasih, Kota Bekasi, Jawa Barat 17426</p>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright @2024 All rights reserved | Sekolah Waris Islam</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/script.js}"></script>
+
+</body>
+
+</html>

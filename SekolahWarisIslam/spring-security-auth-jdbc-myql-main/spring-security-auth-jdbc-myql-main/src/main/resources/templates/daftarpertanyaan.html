@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	  <title>Dashboard Admin Sekolah Waris Islam</title>
+	    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	    <!----css3---->
+        <link rel="stylesheet" th:href="@{/css/custom.css}">
+		
+		<!-- Google fonts -->
+	    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	
+	   <!-- Google material icon -->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body>
+  
+<div class="wrapper">
+  <div class="body-overlay"></div>
+	 
+	 <!-- Sidebar -->
+	 <div id="sidebar">
+	    <div class="sidebar-header">
+		   <h3><img th:src="@{/assets/images2/logo_waris.png}" class="img-fluid"/><span>Sekolah Waris Islam</span></h3>
+		</div>
+		<ul class="list-unstyled component m-0">
+		  <li th:class="${activePage == 'home' ? 'active' : ''}">
+		    <a th:href="@{/}" class="dashboard"><i class="material-icons">dashboard</i>Data Siswa </a>
+		  </li>
+		  <li th:class="${activePage == 'teacher' ? 'active' : ''}">
+		    <a th:href="@{/pertanyaan/list}" class="dashboard"><i class="material-icons">dashboard</i>Daftar Pertanyaan</a>
+		  </li>
+		</ul>
+	 </div>
+	 
+   <!-- Sidebar close -->
+   
+   <!-- Page content start -->
+   <div id="content">
+     
+     <!-- Top navbar -->
+     <div class="top-navbar">
+       <div class="xd-topbar">
+         <div class="row">
+           <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
+             <div class="xp-menubar">
+               <span class="material-icons text-white">signal_cellular_alt</span>
+             </div>
+           </div>
+           <div class="col-md-5 col-lg-3 order-3 order-md-2">
+             <div class="xp-searchbar">
+               
+             </div>
+           </div>
+           <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
+             <div class="xp-profilebar text-right">
+               <nav class="navbar p-0">
+                 <ul class="nav navbar-nav flex-row ml-auto">
+                   <li class="nav-item">
+                     <a class="nav-link" href="https://www.gmail.com" target="_blank">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" style="width:24px; height:24px;">
+                     </a>
+                   </li>
+                   <li class="dropdown nav-item">
+                     <a class="nav-link" href="#" data-toggle="dropdown">
+                       <img th:src="@{/assets/images2/logo_waris.png}" style="width:40px; border-radius:50%;"/>
+                       <span class="xp-user-live"></span>
+                     </a>
+                     <ul class="dropdown-menu small-menu">
+						<li><a href="/logout"><span class="material-icons">logout</span>Logout</a></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </nav>
+             </div>
+           </div>
+         </div>
+         <div class="xp-breadcrumbbar text-center">
+           <h4 class="page-title">Dashboard</h4>
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">Sekolah Waris Islam</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+           </ol>
+         </div>
+       </div>
+     </div>
+     <!-- Top navbar end -->
+     
+     <!-- Main content start -->
+     <div class="main-content">
+       <div class="row">
+         <div class="col-md-12">
+           <div class="table-wrapper">
+             <div class="table-title">
+               <div class="row">
+                 <div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
+                   <h2 class="ml-lg-2">Daftar Pertanyaan</h2>
+				 </div>
+               </div>
+             </div>
+             
+             <table class="table table-striped table-hover">
+               <thead>
+                 <tr>
+                   <th><span class="custom-checkbox"><input type="checkbox" id="selectAll"></span></th>
+                   <th>Nama</th>
+                   <th>Judul</th>
+                   <th>isi</th>
+                   <th>email</th>
+                   <th>Aksi</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr th:each="pertanyaan : ${daftarPertanyaan}">
+                   <td><span class="custom-checkbox">
+					<input type="checkbox" th:id="'checkbox' + ${pertanyaan.id}" name="option[]" th:value="${pertanyaan.id}">
+					<label th:for="'checkbox' + ${pertanyaan.id}"></label>
+				  </span></td>
+                   <td th:text="${pertanyaan.nama}">Nama</td>
+                   <td th:text="${pertanyaan.judul}">Judul</td>
+                   <td th:text="${pertanyaan.isi}">Isi </td>
+                   <td th:text="${pertanyaan.email}">Email</td>
+                   <td><a th:href="@{/pertanyaan/delete/{id}(id=${pertanyaan.id})}" 
+                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                     <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                 </a>
+                 
+                  </td>
+                 </tr>
+               </tbody>
+             </table>
+             
+             </div>
+           </div>
+         </div>
+         
+       </div>
+       <footer class="footer">
+        <div class="container-fluid">
+         <div class="footer-in">
+                <p class="mb-0">&copy 2024 Sekolah Waris Islam. All Rights Reserved.</p>
+         </div>
+      </div>
+     </footer>
+       <!-- Add Modal -->
+       
+       <!-- Delete Modal -->
+       
+     </div>
+     
+     <!-- Main content end -->
+   </div>
+   <!-- Page content end -->
+</div>
+
+<!-- Bootstrap JavaScript -->
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		   $(".xp-menubar").on('click',function(){
+			 $("#sidebar").toggleClass('active');
+			 $("#content").toggleClass('active');
+		   });
+		   
+		   $('.xp-menubar,.body-overlay').on('click',function(){
+			  $("#sidebar,.body-overlay").toggleClass('show-nav');
+		   });
+		   
+		});
+   </script>
+</body>
+</html>

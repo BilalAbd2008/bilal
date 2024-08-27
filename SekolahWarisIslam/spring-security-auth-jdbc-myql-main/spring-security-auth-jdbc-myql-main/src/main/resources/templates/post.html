@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekolah Waris Islam</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <img th:src="@{/assets/images2/terbaru_logo_sekolah_waris.png}" alt="Logo Sekolah Waris Islam">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a th:href="@{/indexx}">Home</a></li>
+                <li><a th:href="@{/about}">Tentang</a></li>
+                <li><a class="active" th:href="@{/blog}">Blog</a></li>
+                <li><a th:href="@{/contact}">Kontak</a></li>
+                <li><a th:href="@{/daftar}">Daftar Sekarang</a></li>
+            </ul>
+            <img id="menu-btn" th:src="@{/assets/images/menu.png}" alt="Menu">
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section id="blog-container">
+        <div class="blogs blogpost">
+            <div class="post">
+                <img th:src="@{/assets/images2/memahamiilmuwaris.jpg}" alt="Memahami Ilmu Waris dalam Islam">
+                <h3>Memahami Ilmu Waris dalam Islam</h3>
+                <p>
+                    Ilmu waris dalam Islam, dikenal sebagai 'Ilm al-Fara'id, adalah cabang ilmu yang mengatur distribusi harta peninggalan seseorang yang telah meninggal dunia kepada ahli warisnya. Ilmu ini sangat penting karena langsung bersumber dari Al-Qur'an dan Sunnah, menjadikannya sebagai bagian integral dari hukum syariah.
+                </p>
+                <h4>Dasar Hukum Ilmu Waris</h4>
+                <p>
+                    Ilmu waris didasarkan pada beberapa ayat dalam Al-Qur'an, khususnya Surah An-Nisa ayat 11, 12, dan 176. Ayat-ayat ini secara eksplisit mengatur pembagian harta warisan kepada kerabat yang berhak menerimanya, seperti anak, orang tua, pasangan, dan saudara. Sunnah Nabi Muhammad SAW juga memberikan penjelasan tambahan mengenai ketentuan ini.
+                </p>
+                <h4>Prinsip Dasar Pembagian Warisan</h4>
+                <h5>1. Ahli Waris</h5>
+                <p>
+                    Ahli waris dibagi menjadi dua kategori utama: ahli waris dzawil furudh (ahli waris dengan bagian tertentu) dan ahli waris 'asabah (ahli waris dengan sisa harta). Ahli waris dzawil furudh mendapatkan bagian yang telah ditentukan dalam Al-Qur'an, sedangkan ahli waris 'asabah mendapatkan sisa dari pembagian tersebut.
+                </p>
+                <h5>2. Bagian Tertentu</h5>
+                <ul>
+                    <li>Anak perempuan mendapatkan setengah jika sendiri dan dua per tiga jika lebih dari satu.</li>
+                    <li>Ibu mendapatkan sepertiga jika tidak ada anak, dan seperenam jika ada anak.</li>
+                    <li>Istri mendapatkan seperempat jika tidak ada anak, dan seperdelapan jika ada anak.</li>
+                </ul>
+                <h5>3. Prioritas Ahli Waris</h5>
+                <p>
+                    Dalam Islam, ada urutan prioritas bagi ahli waris. Orang tua dan anak selalu diutamakan. Jika ada anak laki-laki, maka ia akan mendapatkan dua kali lipat bagian anak perempuan.
+                </p>
+                <h4>Pembagian Waris dalam Praktik</h4>
+                <p>
+                    Proses pembagian waris dimulai dengan pelunasan hutang dan pemenuhan wasiat almarhum yang sah. Setelah itu, barulah harta warisan dibagi sesuai dengan ketentuan syariah. Jika masih ada perselisihan, maka dapat diselesaikan melalui konsultasi dengan ahli waris atau ulama yang memahami hukum waris.
+                </p>
+                <h4>Pentingnya Ilmu Waris</h4>
+                <p>
+                    Ilmu waris bukan hanya masalah pembagian harta, tetapi juga bagian dari keadilan sosial dalam Islam. Dengan memahami dan menerapkan ilmu waris, kita memastikan hak setiap individu terpenuhi sesuai dengan ajaran agama. Ini juga mencegah timbulnya perselisihan dan konflik dalam keluarga setelah seseorang meninggal dunia.
+                </p>
+                <h4>Kesimpulan</h4>
+                <p>
+                    Ilmu waris dalam Islam adalah ilmu yang detail dan terstruktur yang mengatur distribusi harta warisan dengan adil dan sesuai dengan syariah. Memahami dan menerapkannya dalam kehidupan sehari-hari bukan hanya menunjukkan ketaatan kita pada hukum Allah, tetapi juga menjaga harmoni dan keadilan dalam keluarga dan masyarakat.
+                </p>
+                <div class="btn">
+                    <a class="blue" th:href="@{/blog}">Kembali</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col0">
+            <h3>Navigasi Web</h3>
+            <li><a th:href="@{/indexx}" class="aktif"> Home </a></li>
+            <li><a th:href="@{/about}" class="no-underline">Tentang</a></li>
+            <li><a th:href="@{/blog}" class="no-underline">Blog</a></li>
+            <li><a th:href="@{/contact}" class="no-underline">Kontak</a></li>
+            <li><a th:href="@{/daftar}" class="no-underline">Daftar</a></li>
+        </div>
+
+        <div class="footer-col0">
+            <h3>Kontak Kami</h3>
+
+            <div class="contact-info">
+                <a href="https://wa.me/6281291712761" class="no-underline" target="_blank">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+62 812 9171 2761 (WhatsApp)</span><br>
+                </a>
+            </div>
+
+            <div>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sekolahwarisislam@gmail.com" class="no-underline" target="_blank">
+                    <br><i class="fas fa-envelope get"></i>
+                    <span>sekolahwarisislam@gmail.com </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-col0">
+            <h3>Sosial Media Sekolah Waris Islam</h3>
+            <div class="contact-info">
+                <a href="https://www.instagram.com/sekolahwarisislam" class="no-underline" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="lokasi">
+            <p>Perumahan Bumi Dirgantara Permai ( Cluster Bali 2 )
+                Jl. Suryadarma I Blok BI No 17 RT 001 RW 011 Jatisari, Jatiasih, Kota Bekasi, Jawa Barat 17426</p>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright @2024 All rights reserved | Sekolah Waris Islam</p>
+        </div>
+    </footer>
+
+
+    <script>
+        $('#menu-btn').click(function () {
+            $('nav .navigation ul').addClass('active')
+        });
+        $('#menu-close').click(function () {
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+
+</body>
+
+</html>
